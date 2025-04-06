@@ -1,36 +1,105 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FITASIT - Inicio</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FITASIT - Tu Salud, Nuestra Prioridad</title>
+  <link rel="stylesheet" href="estilos.css" />
 </head>
 <body>
-    <header>
-        <h1>Bienvenido a FITASIT</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="registro.html">Registro</a></li>
-                <li><a href="plan-alimentacion.html">Plan de Alimentación</a></li>
-                <li><a href="plan-ejercicio.html">Plan de Ejercicio</a></li>
-                <li><a href="seguimiento.html">Seguimiento</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <main>
-        <section>
-            <h2>Tu plataforma personalizada para el bienestar</h2>
-            <p>Monitorea tu salud, recibe recomendaciones y sigue tu progreso de manera sencilla y efectiva.</p>
-            <a href="registro.html" class="boton">Empieza ahora</a>
-        </section>
-    </main>
-    
-    <footer>
-        <p>&copy; 2025 FITASIT. Todos los derechos reservados.</p>
-    </footer>
+  <header>
+    <h1>FITASIT</h1>
+    <p class="slogan">Tu sistema personalizado de salud y bienestar</p>
+    <nav>
+      <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Registro</a></li>
+        <li><a href="#">Login</a></li>
+        <li><a href="#">Plan Alimentación</a></li>
+        <li><a href="#">Plan Ejercicio</a></li>
+        <li><a href="#">Progreso</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="descripcion-principal">
+      <h2>Bienvenido a FITASIT</h2>
+      <p>
+        FITASIT es una innovadora plataforma de seguimiento de salud pensada
+        para ti. Registra tus datos, recibe planes personalizados de alimentación
+        y ejercicio, y sigue tu progreso en tiempo real con reportes visuales.
+      </p>
+    </section>
+
+    <section class="registro">
+      <h2>Registro de Usuario</h2>
+      <p>Empieza tu viaje saludable creando una cuenta gratuita.</p>
+      <form>
+        <input type="text" placeholder="Nombre completo" />
+        <input type="email" placeholder="Correo electrónico" />
+        <input type="password" placeholder="Contraseña" />
+        <button>Registrarse</button>
+      </form>
+    </section>
+
+    <section class="login">
+      <h2>Inicio de Sesión</h2>
+      <p>Ingresa a tu cuenta para acceder a tus planes personalizados.</p>
+      <form>
+        <input type="email" placeholder="Correo" />
+        <input type="password" placeholder="Contraseña" />
+        <button>Ingresar</button>
+      </form>
+    </section>
+
+    <section class="formulario">
+      <h2>Datos Personales</h2>
+      <p>
+        Ayúdanos a conocerte mejor. Ingresa tus datos físicos y objetivos para
+        crear planes que se ajusten a ti.
+      </p>
+      <form>
+        <input type="number" placeholder="Edad" />
+        <input type="number" placeholder="Peso (kg)" />
+        <input type="text" placeholder="Nivel de actividad (bajo, medio, alto)" />
+        <textarea placeholder="Objetivos de salud (perder peso, ganar músculo, etc.)"></textarea>
+        <button>Guardar</button>
+      </form>
+    </section>
+
+    <section class="plan-alimentacion">
+      <h2>Plan de Alimentación</h2>
+      <p>
+        Recibe sugerencias nutricionales personalizadas para cada momento del día.
+      </p>
+      <div class="card">🥣 Desayuno: Opciones energéticas y balanceadas para empezar el día.</div>
+      <div class="card">🥗 Almuerzo: Comidas ricas en nutrientes sin perder el sabor.</div>
+      <div class="card">🍲 Cena: Platos ligeros y saludables para terminar tu jornada.</div>
+    </section>
+
+    <section class="plan-ejercicio">
+      <h2>Plan de Ejercicio</h2>
+      <p>
+        Planes de entrenamiento adaptados a tu condición física y metas personales.
+      </p>
+      <div class="card">🏋️ Rutinas de fuerza para tonificar y ganar masa muscular.</div>
+      <div class="card">🏃 Cardio para mejorar tu resistencia y salud cardiovascular.</div>
+      <div class="card">🧘 Estiramientos y yoga para tu flexibilidad y bienestar mental.</div>
+    </section>
+
+    <section class="seguimiento">
+      <h2>Seguimiento y Progreso</h2>
+      <p>
+        Visualiza tu evolución con reportes y gráficas claras. Monitorea tu peso,
+        actividad física y metas alcanzadas.
+      </p>
+      <p class="placeholder-grafico">📊 [Aquí irá una gráfica de progreso en la implementación real]</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 FITASIT. Desarrollado por estudiantes de Ingeniería de Sistemas - UDENAR.</p>
+  </footer>
 </body>
 </html>
