@@ -14,9 +14,9 @@
     </div>
     <nav>
       <a href="#">Inicio</a>
-      <a href="#">Sobre Nosotros</a>
-      <a href="#">Módulos</a>
-      <a href="#">Contacto</a>
+      <a href="#" id="btn-sobre-nosotros">Sobre Nosotros</a>
+      <a href="#modulos">Módulos</a>
+      <a href="#contacto">Contacto</a>
       <a href="#" class="btn-ingresar">Iniciar Sesión</a>
     </nav>
   </header>
@@ -29,40 +29,57 @@
     </div>
   </section>
 
-  <section class="modulos">
+  <!-- Sección Sobre Nosotros (Oculta al inicio) -->
+  <section id="sobre-nosotros" class="sobre-nosotros oculto">
+    <h2>Sobre Nosotros</h2>
+    <p>FITASIT (Fitness Assistant Intelligent Tracker) es un sistema desarrollado por estudiantes de Ingeniería de Sistemas de la Universidad de Nariño como parte del curso "Modelos de Computación".</p>
+    <p>Su propósito es brindar a los usuarios una herramienta digital intuitiva, moderna y personalizada para el monitoreo de su salud física. A través de módulos especializados como perfil, alimentación, ejercicios y seguimiento, se busca mejorar la calidad de vida de las personas integrando tecnología y bienestar.</p>
+    <p>FITASIT representa un enfoque académico y funcional para aplicar conocimientos de desarrollo web, diseño centrado en el usuario y sistemas inteligentes, enfocados en la salud personal.</p>
+  </section>
+
+  <!-- Sección Módulos -->
+  <section id="modulos" class="modulos">
     <h2>¿Qué encontrarás en FITASIT?</h2>
     <div class="modulo-lista">
-
       <div class="modulo">
         <h3>🧍‍♂️ Mi Perfil</h3>
         <p>Administra tu información personal, objetivos de salud, edad, peso, estatura y preferencias desde un solo lugar.</p>
       </div>
-
       <div class="modulo">
         <h3>🍽️ Plan Alimenticio</h3>
         <p>Accede a planes nutricionales personalizados según tus metas y lleva un seguimiento diario de tus comidas.</p>
       </div>
-
       <div class="modulo">
         <h3>🏋️ Plan de Ejercicio</h3>
         <p>Explora rutinas diseñadas por entrenadores según tus capacidades físicas, nivel y disponibilidad.</p>
       </div>
-
       <div class="modulo">
         <h3>📈 Seguimiento</h3>
         <p>Visualiza tu progreso físico con gráficos y estadísticas semanales y mensuales.</p>
       </div>
-
       <div class="modulo">
         <h3>⚙️ Configuración</h3>
         <p>Controla notificaciones, idioma, preferencias y conecta dispositivos de monitoreo si lo deseas.</p>
       </div>
-
     </div>
+  </section>
+
+  <!-- Sección Contacto -->
+  <section id="contacto" class="contacto">
+    <h2>Contáctanos</h2>
+    <p>¿Tienes preguntas? Escríbenos a <strong>fitasit@udenar.edu.co</strong></p>
   </section>
 
   <footer>
     <p>&copy; 2025 FITASIT. Universidad de Nariño - Ingeniería de Sistemas</p>
   </footer>
+
+  <script>
+    document.getElementById('btn-sobre-nosotros').addEventListener('click', function (e) {
+      e.preventDefault();
+      const seccion = document.getElementById('sobre-nosotros');
+      seccion.classList.toggle('oculto');
+    });
+  </script>
 </body>
 </html>
