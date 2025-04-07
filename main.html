@@ -1,85 +1,200 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FITASIT | Tu Salud Personalizada</title>
-  <link rel="stylesheet" href="estilos.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FITASIT - Seguimiento de Salud Personalizado</title>
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  <header>
-    <div class="logo">
-      <h1>FITASIT</h1>
-      <p>Bienvenido a tu plataforma de bienestar personalizada</p>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <h1>FIT<span>ASIT</span></h1>
+                </div>
+                <div class="menu">
+                    <ul>
+                        <li><a href="#" class="active">Inicio</a></li>
+                        <li><a href="#">Servicios</a></li>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>Bienvenido a tu camino hacia una vida más saludable</h1>
+                    <p>FITASIT es una plataforma personalizada que te ayuda a alcanzar tus objetivos de salud y bienestar a través de planes de ejercicio y nutrición adaptados específicamente para ti.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn primary">Comenzar ahora</a>
+                        <a href="#" class="btn secondary">Saber más</a>
+                    </div>
+                </div>
+<div class="hero-image">
+    <div class="image-container">
+        <div class="blob"></div>
+        <img src="https://images.ecestaticos.com/4jdcB3_42QNty8uzVI_0dTl58aM=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fc2a%2F17f%2F019%2Fc2a17f0190618a72fac4185f4c5b4f5e.jpg" alt="Persona haciendo ejercicio">
     </div>
-    <nav>
-      <a href="#">Inicio</a>
-      <a href="#" id="btn-sobre-nosotros">Sobre Nosotros</a>
-      <a href="#modulos">Módulos</a>
-      <a href="#contacto">Contacto</a>
-      <a href="#" class="btn-ingresar">Iniciar Sesión</a>
-    </nav>
-  </header>
+</div>
 
-  <section class="hero">
-    <div class="hero-texto">
-      <h2>Transforma tu bienestar con tecnología</h2>
-      <p>FITASIT es tu plataforma integral para llevar un control inteligente de tu salud, rutinas, alimentación y progreso físico.</p>
-      <a href="#" class="btn-principal">Comenzar ahora</a>
+            </section>
+
+            <section class="features">
+                <h2>¿Por qué elegir FITASIT?</h2>
+                <div class="feature-cards">
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fas fa-dumbbell"></i>
+                        </div>
+                        <h3>Ejercicios Personalizados</h3>
+                        <p>Rutinas adaptadas a tu nivel de condición física, objetivos y preferencias.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fas fa-apple-alt"></i>
+                        </div>
+                        <h3>Planes Nutricionales</h3>
+                        <p>Dietas equilibradas según tus necesidades calóricas y restricciones alimentarias.</p>
+                    </div>
+                    <div class="card">
+                        <div class="icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Seguimiento Detallado</h3>
+                        <p>Monitorea tu progreso y recibe ajustes dinámicos según tus avances.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="login-register">
+                <div class="form-container">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="login">Iniciar Sesión</div>
+                        <div class="tab" data-tab="register">Registrarse</div>
+                    </div>
+                    
+                    <div class="form-content active" id="login-form">
+                        <h2>Inicia Sesión</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="email">Correo Electrónico</label>
+                                <input type="email" id="email" placeholder="usuario@ejemplo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">Contraseña</label>
+                                <input type="password" id="password" placeholder="Tu contraseña" required>
+                            </div>
+                            <div class="form-group remember">
+                                <input type="checkbox" id="remember">
+                                <label for="remember">Recordarme</label>
+                                <a href="#" class="forgot">¿Olvidaste tu contraseña?</a>
+                            </div>
+                            <button type="submit" class="btn primary full-width">Ingresar</button>
+                        </form>
+                    </div>
+                    
+                    <div class="form-content" id="register-form">
+                        <h2>Crea tu cuenta</h2>
+                        <form>
+                            <div class="form-group">
+                                <label for="reg-name">Nombre Completo</label>
+                                <input type="text" id="reg-name" placeholder="Tu nombre" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-email">Correo Electrónico</label>
+                                <input type="email" id="reg-email" placeholder="usuario@ejemplo.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-password">Contraseña</label>
+                                <input type="password" id="reg-password" placeholder="Crea una contraseña" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="reg-confirm">Confirmar Contraseña</label>
+                                <input type="password" id="reg-confirm" placeholder="Repite tu contraseña" required>
+                            </div>
+                            <div class="form-group terms">
+                                <input type="checkbox" id="terms" required>
+                                <label for="terms">Acepto los <a href="#">términos y condiciones</a></label>
+                            </div>
+                            <button type="submit" class="btn primary full-width">Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>FIT<span>ASIT</span></h2>
+                    <p>Tu aliado en el camino hacia una vida más saludable</p>
+                </div>
+                <div class="footer-links">
+                    <div class="link-group">
+                        <h3>Enlaces</h3>
+                        <ul>
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Servicios</a></li>
+                            <li><a href="#">Acerca de</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Recursos</h3>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Tutoriales</a></li>
+                            <li><a href="#">FAQ</a></li>
+                            <li><a href="#">Soporte</a></li>
+                        </ul>
+                    </div>
+                    <div class="link-group">
+                        <h3>Legal</h3>
+                        <ul>
+                            <li><a href="#">Términos de uso</a></li>
+                            <li><a href="#">Política de privacidad</a></li>
+                            <li><a href="#">Cookies</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 FITASIT. Todos los derechos reservados.</p>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </footer>
     </div>
-  </section>
 
-  <!-- Sección Sobre Nosotros (Oculta al inicio) -->
-  <section id="sobre-nosotros" class="sobre-nosotros oculto">
-    <h2>Sobre Nosotros</h2>
-    <p>FITASIT (Fitness Assistant Intelligent Tracker) es un sistema desarrollado por estudiantes de Ingeniería de Sistemas de la Universidad de Nariño como parte del curso "Modelos de Computación".</p>
-    <p>Su propósito es brindar a los usuarios una herramienta digital intuitiva, moderna y personalizada para el monitoreo de su salud física. A través de módulos especializados como perfil, alimentación, ejercicios y seguimiento, se busca mejorar la calidad de vida de las personas integrando tecnología y bienestar.</p>
-    <p>FITASIT representa un enfoque académico y funcional para aplicar conocimientos de desarrollo web, diseño centrado en el usuario y sistemas inteligentes, enfocados en la salud personal.</p>
-  </section>
-
-  <!-- Sección Módulos -->
-  <section id="modulos" class="modulos">
-    <h2>¿Qué encontrarás en FITASIT?</h2>
-    <div class="modulo-lista">
-      <div class="modulo">
-        <h3>🧍‍♂️ Mi Perfil</h3>
-        <p>Administra tu información personal, objetivos de salud, edad, peso, estatura y preferencias desde un solo lugar.</p>
-      </div>
-      <div class="modulo">
-        <h3>🍽️ Plan Alimenticio</h3>
-        <p>Accede a planes nutricionales personalizados según tus metas y lleva un seguimiento diario de tus comidas.</p>
-      </div>
-      <div class="modulo">
-        <h3>🏋️ Plan de Ejercicio</h3>
-        <p>Explora rutinas diseñadas por entrenadores según tus capacidades físicas, nivel y disponibilidad.</p>
-      </div>
-      <div class="modulo">
-        <h3>📈 Seguimiento</h3>
-        <p>Visualiza tu progreso físico con gráficos y estadísticas semanales y mensuales.</p>
-      </div>
-      <div class="modulo">
-        <h3>⚙️ Configuración</h3>
-        <p>Controla notificaciones, idioma, preferencias y conecta dispositivos de monitoreo si lo deseas.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección Contacto -->
-  <section id="contacto" class="contacto">
-    <h2>Contáctanos</h2>
-    <p>¿Tienes preguntas? Escríbenos a <strong>fitasit@udenar.edu.co</strong></p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 FITASIT. Universidad de Nariño - Ingeniería de Sistemas</p>
-  </footer>
-
-  <script>
-    document.getElementById('btn-sobre-nosotros').addEventListener('click', function (e) {
-      e.preventDefault();
-      const seccion = document.getElementById('sobre-nosotros');
-      seccion.classList.toggle('oculto');
-    });
-  </script>
+    <script>
+        // Script simple para la funcionalidad de las pestañas
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab');
+            const forms = document.querySelectorAll('.form-content');
+            
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Activar pestaña
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Mostrar formulario correspondiente
+                    forms.forEach(form => form.classList.remove('active'));
+                    document.getElementById(tabId + '-form').classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
