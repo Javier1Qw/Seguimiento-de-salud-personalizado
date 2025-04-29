@@ -1,16 +1,15 @@
 #Inicio principal
 
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FITASIT - Seguimiento de Salud Personalizado</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="estilos.css">
-
-    
 </head>
 <body>
     <div class="container">
@@ -22,9 +21,15 @@
                 <div class="menu">
                     <ul>
                         <li><a href="#" class="active">Inicio</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Acerca de</a></li>
-                        <li><a href="#">Contacto</a></li>
+                        <li class="menu-item">
+                            <a href="#" aria-expanded="false" aria-haspopup="true" id="servicesLink">Servicios <i class="fas fa-caret-down"></i></a>
+                            <ul id="servicesMenu" class="submenu" aria-labelledby="servicesLink">
+                                <li><a href="#servicios-section">Planes</a></li>
+                                <li><a href="#acerca-section">Quiénes somos</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#acerca-section">Acerca de</a></li>
+                        <li><a href="#contacto-section">Contacto</a></li>
                     </ul>
                 </div>
             </nav>
@@ -33,20 +38,19 @@
         <main>
             <section class="hero">
                 <div class="hero-content">
-                    <h1> Bienvenido a tu camino hacia una vida más saludable</h1>
-                    <p> FITASIT es una plataforma personalizada que te ayuda a alcanzar tus objetivos de salud y bienestar a través de planes de ejercicio y nutrición adaptados específicamente para ti.</p>
+                    <h1>Bienvenido a tu camino hacia una vida más saludable</h1>
+                    <p>FITASIT es una plataforma personalizada que te ayuda a alcanzar tus objetivos de salud y bienestar a través de planes de ejercicio y nutrición adaptados específicamente para ti.</p>
                     <div class="hero-buttons">
-                        <a href="#" class="btn primary">Comenzar ahora</a>
-                        <a href="#" class="btn secondary">Saber más</a>
+                        <a href="#login-register-section" class="btn primary">Comenzar ahora</a>
+                        <a href="#servicios-section" class="btn secondary">Saber más</a>
                     </div>
                 </div>
-<div class="hero-image">
-    <div class="image-container">
-        <div class="blob"></div>
-        <img src="https://images.ecestaticos.com/4jdcB3_42QNty8uzVI_0dTl58aM=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fc2a%2F17f%2F019%2Fc2a17f0190618a72fac4185f4c5b4f5e.jpg" alt="Persona haciendo ejercicio">
-    </div>
-</div>
-
+                <div class="hero-image">
+                    <div class="image-container">
+                        <div class="blob"></div>
+                        <img src="https://images.ecestaticos.com/4jdcB3_42QNty8uzVI_0dTl58aM=/0x0:2120x1414/1200x900/filters:fill(white):format(jpg)/f.elconfidencial.com%2Foriginal%2Fc2a%2F17f%2F019%2Fc2a17f0190618a72fac4185f4c5b4f5e.jpg" alt="Persona haciendo ejercicio">
+                    </div>
+                </div>
             </section>
 
             <section class="features">
@@ -56,8 +60,8 @@
                         <div class="icon">
                             <i class="fas fa-dumbbell"></i>
                         </div>
-                        <h3> Ejercicios Personalizados</h3>
-                        <p> Rutinas adaptadas a tu nivel de condición física, objetivos y preferencias.</p>
+                        <h3>Ejercicios Personalizados</h3>
+                        <p>Rutinas adaptadas a tu nivel de condición física, objetivos y preferencias.</p>
                     </div>
                     <div class="card">
                         <div class="icon">
@@ -76,23 +80,25 @@
                 </div>
             </section>
 
-            <section class="login-register">
+            <section id="login-register-section" class="login-register">
                 <div class="form-container">
-                    <div class="tabs">
-                        <div class="tab active" data-tab="login">Iniciar Sesión</div>
-                        <div class="tab" data-tab="register">Registrarse</div>
+                    <div class="tabs" role="tablist">
+                        <button class="tab active" id="login-tab" data-tab="login" role="tab" aria-selected="true" aria-controls="login-form">Iniciar Sesión</button>
+                        <button class="tab" id="register-tab" data-tab="register" role="tab" aria-selected="false" aria-controls="register-form">Registrarse</button>
                     </div>
-                    
-                    <div class="form-content active" id="login-form">
+
+                    <div class="form-content active" id="login-form" role="tabpanel" aria-labelledby="login-tab">
                         <h2>Inicia Sesión</h2>
-                        <form>
+                        <form id="login-form-element" novalidate>
                             <div class="form-group">
                                 <label for="email">Correo Electrónico</label>
                                 <input type="email" id="email" placeholder="Ingrese su correo" required>
+                                <div class="invalid-feedback">Por favor ingrese un correo electrónico válido.</div>
                             </div>
                             <div class="form-group">
                                 <label for="password">Contraseña</label>
-                                <input type="password" id="password" placeholder="Tu contraseña" required>
+                                <input type="password" id="password" placeholder="Tu contraseña" required minlength="6">
+                                <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
                             </div>
                             <div class="form-group remember">
                                 <input type="checkbox" id="remember">
@@ -102,31 +108,265 @@
                             <button type="submit" class="btn primary full-width">Ingresar</button>
                         </form>
                     </div>
-                    
-                    <div class="form-content" id="register-form">
+
+                    <div class="form-content" id="register-form" role="tabpanel" aria-labelledby="register-tab" hidden>
                         <h2>Crea tu cuenta</h2>
-                        <form>
+                        <form id="register-form-element" novalidate>
                             <div class="form-group">
                                 <label for="reg-name">Nombre Completo</label>
                                 <input type="text" id="reg-name" placeholder="Tu nombre" required>
+                                <div class="invalid-feedback">Por favor ingrese su nombre completo.</div>
                             </div>
                             <div class="form-group">
                                 <label for="reg-email">Correo Electrónico</label>
                                 <input type="email" id="reg-email" placeholder="usuario@ejemplo.com" required>
+                                <div class="invalid-feedback">Por favor ingrese un correo electrónico válido.</div>
                             </div>
                             <div class="form-group">
                                 <label for="reg-password">Contraseña</label>
-                                <input type="password" id="reg-password" placeholder="Crea una contraseña" required>
+                                <input type="password" id="reg-password" placeholder="Crea una contraseña" required minlength="6">
+                                <div class="invalid-feedback">La contraseña debe tener al menos 6 caracteres.</div>
                             </div>
                             <div class="form-group">
                                 <label for="reg-confirm">Confirmar Contraseña</label>
                                 <input type="password" id="reg-confirm" placeholder="Repite tu contraseña" required>
+                                <div class="invalid-feedback">Las contraseñas no coinciden.</div>
                             </div>
                             <div class="form-group terms">
                                 <input type="checkbox" id="terms" required>
                                 <label for="terms">Acepto los <a href="#">términos y condiciones</a></label>
+                                <div class="invalid-feedback">Debe aceptar los términos y condiciones para continuar.</div>
                             </div>
                             <button type="submit" class="btn primary full-width">Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <section id="servicios-section" class="info-section">
+                <h2>Nuestros Planes</h2>
+                <div class="plans-container">
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>Plan Básico</h3>
+                            <div class="plan-price">19.99€/mes</div>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Rutinas personalizadas semanales</li>
+                                <li><i class="fas fa-check"></i> Seguimiento básico de progreso</li>
+                                <li><i class="fas fa-check"></i> Recomendaciones nutricionales</li>
+                                <li><i class="fas fa-check"></i> Soporte por email</li>
+                                <li class="feature-disabled"><i class="fas fa-times"></i> Ajustes dinámicos de rutina</li>
+                                <li class="feature-disabled"><i class="fas fa-times"></i> Consultas con especialistas</li>
+                            </ul>
+                        </div>
+                        <div class="plan-cta">
+                            <a href="#login-register-section" class="btn primary">Empezar ahora</a>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-card featured">
+                        <div class="plan-badge">Más popular</div>
+                        <div class="plan-header">
+                            <h3>Plan Premium</h3>
+                            <div class="plan-price">39.99€/mes</div>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Rutinas personalizadas diarias</li>
+                                <li><i class="fas fa-check"></i> Seguimiento detallado de progreso</li>
+                                <li><i class="fas fa-check"></i> Plan nutricional personalizado</li>
+                                <li><i class="fas fa-check"></i> Soporte prioritario 24/7</li>
+                                <li><i class="fas fa-check"></i> Ajustes dinámicos de rutina</li>
+                                <li><i class="fas fa-check"></i> 2 consultas mensuales con especialistas</li>
+                            </ul>
+                        </div>
+                        <div class="plan-cta">
+                            <a href="#login-register-section" class="btn primary">Empezar ahora</a>
+                        </div>
+                    </div>
+                    
+                    <div class="plan-card">
+                        <div class="plan-header">
+                            <h3>Plan Empresarial</h3>
+                            <div class="plan-price">Personalizado</div>
+                        </div>
+                        <div class="plan-features">
+                            <ul>
+                                <li><i class="fas fa-check"></i> Todo lo incluido en Premium</li>
+                                <li><i class="fas fa-check"></i> Planes para equipos de trabajo</li>
+                                <li><i class="fas fa-check"></i> Dashboard para administradores</li>
+                                <li><i class="fas fa-check"></i> Reportes de rendimiento grupal</li>
+                                <li><i class="fas fa-check"></i> Actividades de team building</li>
+                                <li><i class="fas fa-check"></i> Consultas ilimitadas con especialistas</li>
+                            </ul>
+                        </div>
+                        <div class="plan-cta">
+                            <a href="#contacto-section" class="btn secondary">Contactar para más información</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="plan-footnote">
+                    <p>* Todos los planes incluyen una prueba gratuita de 7 días. Cancela en cualquier momento.</p>
+                </div>
+            </section>
+
+            <section id="acerca-section" class="info-section bg-light">
+                <h2>Quiénes Somos</h2>
+                <div class="about-container">
+                    <div class="about-content">
+                        <div class="about-text">
+                            <h3>Nuestra Historia</h3>
+                            <p>FITASIT nació en 2025 cuando un grupo de apasionados por la tecnología y el bienestar se unieron con una visión: democratizar el acceso a planes personalizados de salud y fitness mediante la tecnología.</p>
+                            <p>Lo que comenzó como un proyecto entre amigos, rápidamente se transformó en una plataforma completa que hoy ayuda a miles de personas a alcanzar sus objetivos de salud de manera eficiente y personalizada.</p>
+                            
+                            <h3>Nuestra Misión</h3>
+                            <p>Transformar la forma en que las personas gestionan su bienestar físico y mental mediante soluciones tecnológicas accesibles y personalizadas.</p>
+                            
+                            <h3>Nuestra Visión</h3>
+                            <p>Convertirnos en el aliado tecnológico preferido para el bienestar integral, creando una comunidad global donde la salud personalizada sea un derecho, no un privilegio.</p>
+                        </div>
+                        
+                    <div class="about-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">15,000+</div>
+                            <div class="stat-label">Usuarios activos</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">87%</div>
+                            <div class="stat-label">Tasa de éxito</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Soporte disponible</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4.8/5</div>
+                            <div class="stat-label">Valoración de usuarios</div>
+                        </div>
+                    </div>
+                    <div class="values-section">
+                        <h3>Nuestros Valores</h3>
+                        <div class="values-grid">
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <i class="fas fa-handshake"></i>
+                                </div>
+                                <h4>Compromiso</h4>
+                                <p>Nos comprometemos a ofrecer resultados de calidad y a acompañarte en todo tu proceso.</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <i class="fas fa-brain"></i>
+                                </div>
+                                <h4>Innovación</h4>
+                                <p>Constantemente buscamos nuevas formas de mejorar nuestros servicios mediante la tecnología.</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <i class="fas fa-users"></i>
+                                </div>
+                                <h4>Comunidad</h4>
+                                <p>Creemos en el poder de la comunidad para motivar y apoyar los objetivos de cada persona.</p>
+                            </div>
+                            <div class="value-item">
+                                <div class="value-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <h4>Confianza</h4>
+                                <p>Trabajamos con los más altos estándares de seguridad y privacidad de datos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contacto-section" class="info-section">
+                <h2>Contáctanos</h2>
+                <div class="contact-container">
+                    <div class="contact-info">
+                        <p class="contact-intro">¿Tienes dudas o sugerencias? Estamos aquí para ayudarte. Completa el formulario o utiliza cualquiera de nuestros canales de contacto.</p>
+                        <div class="contact-methods">
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Email</h4>
+                                    <p><a href="mailto:info@fitasit.com">info@fitasit.com</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Teléfono</h4>
+                                    <p><a href="tel:+34900123456">+34 900 123 456</a></p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Oficina Central</h4>
+                                    <p>C/ Tecnología, 123<br>28001 Madrid, España</p>
+                                </div>
+                            </div>
+                            <div class="contact-method">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Horario de Atención</h4>
+                                    <p>Lunes a Viernes: 9:00 - 20:00<br>Sábados: 10:00 - 14:00</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="social-contact">
+                            <h4>Síguenos en redes sociales</h4>
+                            <div class="social-icons">
+                                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form-container">
+                        <h3>Envíanos un mensaje</h3>
+                        <form id="contact-form" class="contact-form" novalidate>
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="contact-name">Nombre completo</label>
+                                    <input type="text" id="contact-name" placeholder="Tu nombre" required>
+                                    <div class="invalid-feedback">Por favor, ingresa tu nombre.</div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="contact-email">Correo electrónico</label>
+                                    <input type="email" id="contact-email" placeholder="tu@email.com" required>
+                                    <div class="invalid-feedback">Por favor, ingresa un email válido.</div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-subject">Asunto</label>
+                                <input type="text" id="contact-subject" placeholder="¿En qué podemos ayudarte?" required>
+                                <div class="invalid-feedback">Por favor, indica el asunto de tu mensaje.</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message">Mensaje</label>
+                                <textarea id="contact-message" rows="5" placeholder="Escribe tu mensaje aquí..." required></textarea>
+                                <div class="invalid-feedback">Por favor, escribe tu mensaje.</div>
+                            </div>
+                            <div class="form-group terms">
+                                <input type="checkbox" id="contact-privacy" required>
+                                <label for="contact-privacy">Acepto la <a href="#">política de privacidad</a> y el tratamiento de mis datos.</label>
+                                <div class="invalid-feedback">Debes aceptar la política de privacidad.</div>
+                            </div>
+                            <button type="submit" class="btn primary full-width">Enviar mensaje</button>
                         </form>
                     </div>
                 </div>
@@ -143,12 +383,13 @@
                     <div class="link-group">
                         <h3>Enlaces</h3>
                         <ul>
-                            <li><a href="#">Inicio</a></li>
-                            <li><a href="#">Servicios</a></li>
-                            <li><a href="#">Acerca de</a></li>
-                            <li><a href="#">Contacto</a></li>
+                            <li><a href="#" class="active">Inicio</a></li>
+                            <li><a href="#servicios-section">Servicios</a></li>
+                            <li><a href="#acerca-section">Acerca de</a></li>
+                            <li><a href="#contacto-section">Contacto</a></li>
                         </ul>
                     </div>
+                    
                     <div class="link-group">
                         <h3>Recursos</h3>
                         <ul>
@@ -171,35 +412,241 @@
             <div class="footer-bottom">
                 <p>&copy; 2025 FITASIT. Todos los derechos reservados.</p>
                 <div class="social-media">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                 </div>
             </div>
         </footer>
     </div>
 
     <script>
-        // Script simple para la funcionalidad de las pestañas
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
+            // Manejo de pestañas para login/registro
+            initTabSystem();
+            
+            // Manejo del menú desplegable
+            initDropdownMenu();
+            
+            // Validación de formularios
+            initFormValidation();
+            
+            // Inicializar animaciones en scroll
+            initScrollAnimations();
+            
+            // Inicializar navegación suave
+            initSmoothScrolling();
+        });
+        
+        // Inicializa el sistema de pestañas
+        function initTabSystem() {
             const tabs = document.querySelectorAll('.tab');
             const forms = document.querySelectorAll('.form-content');
             
             tabs.forEach(tab => {
-                tab.addEventListener('click', function() {
+                tab.addEventListener('click', function () {
                     const tabId = this.getAttribute('data-tab');
                     
-                    // Activar pestaña
-                    tabs.forEach(t => t.classList.remove('active'));
+                    // Actualizar estado de pestañas
+                    tabs.forEach(t => {
+                        t.classList.remove('active');
+                        t.setAttribute('aria-selected', 'false');
+                    });
+                    
                     this.classList.add('active');
+                    this.setAttribute('aria-selected', 'true');
                     
                     // Mostrar formulario correspondiente
-                    forms.forEach(form => form.classList.remove('active'));
-                    document.getElementById(tabId + '-form').classList.add('active');
+                    forms.forEach(form => {
+                        form.classList.remove('active');
+                        form.hidden = true;
+                    });
+                    
+                    const activeForm = document.getElementById(tabId + '-form');
+                    activeForm.classList.add('active');
+                    activeForm.hidden = false;
                 });
             });
-        });
+        }
+        
+        // Inicializa el menú desplegable
+        function initDropdownMenu() {
+            const servicesLink = document.getElementById('servicesLink');
+            const servicesMenu = document.getElementById('servicesMenu');
+            
+            servicesLink.addEventListener('click', function (event) {
+                event.preventDefault();
+                const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                
+                this.setAttribute('aria-expanded', !isExpanded);
+                servicesMenu.classList.toggle('show');
+            });
+            
+            // Cerrar menú al hacer clic fuera
+            document.addEventListener('click', function (event) {
+                if (!servicesLink.contains(event.target) && !servicesMenu.contains(event.target)) {
+                    servicesMenu.classList.remove('show');
+                    servicesLink.setAttribute('aria-expanded', 'false');
+                }
+            });
+            
+            // Cerrar menú con tecla Escape
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Escape' && servicesMenu.classList.contains('show')) {
+                    servicesMenu.classList.remove('show');
+                    servicesLink.setAttribute('aria-expanded', 'false');
+                    servicesLink.focus();
+                }
+            });
+        }
+        
+        // Inicializa la validación de formularios
+        function initFormValidation() {
+            const loginForm = document.getElementById('login-form-element');
+            const registerForm = document.getElementById('register-form-element');
+            const contactForm = document.getElementById('contact-form');
+            
+            if (loginForm) loginForm.addEventListener('submit', validateForm);
+            if (registerForm) registerForm.addEventListener('submit', validateForm);
+            if (contactForm) contactForm.addEventListener('submit', validateForm);
+            
+            // Validación específica para confirmar contraseña
+            const regPassword = document.getElementById('reg-password');
+            const regConfirm = document.getElementById('reg-confirm');
+            
+            if (regConfirm && regPassword) {
+                regConfirm.addEventListener('input', function() {
+                    if (this.value !== regPassword.value) {
+                        this.setCustomValidity('Las contraseñas no coinciden');
+                    } else {
+                        this.setCustomValidity('');
+                    }
+                });
+                
+                regPassword.addEventListener('input', function() {
+                    if (regConfirm.value !== '' && regConfirm.value !== this.value) {
+                        regConfirm.setCustomValidity('Las contraseñas no coinciden');
+                    } else {
+                        regConfirm.setCustomValidity('');
+                    }
+                });
+            }
+        }
+        
+        // Valida un formulario
+        function validateForm(event) {
+            event.preventDefault();
+            
+            const form = event.target;
+            
+            if (!form.checkValidity()) {
+                event.stopPropagation();
+                highlightInvalidFields(form);
+            } else {
+                // Aquí iría la lógica para enviar el formulario
+                console.log('Formulario válido, enviando datos...');
+                // Simulación de envío con feedback al usuario
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.textContent;
+                
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+                
+                // Simular una petición de red
+                setTimeout(() => {
+                    // Resetear el formulario tras éxito simulado
+                    form.reset();
+                    form.classList.remove('was-validated');
+                    
+                    // Mostrar mensaje de éxito
+                    const successMessage = document.createElement('div');
+                    successMessage.className = 'alert alert-success mt-3';
+                    successMessage.textContent = '¡Enviado con éxito! Nos pondremos en contacto contigo pronto.';
+                    form.appendChild(successMessage);
+                    
+                    // Restaurar el botón
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = originalText;
+                    
+                    // Eliminar mensaje después de unos segundos
+                    setTimeout(() => {
+                        successMessage.remove();
+                    }, 5000);
+                }, 1500);
+            }
+            
+            form.classList.add('was-validated');
+        }
+        
+        // Muestra mensajes de error en campos inválidos
+        function highlightInvalidFields(form) {
+            const invalidInputs = form.querySelectorAll(':invalid');
+            
+            invalidInputs.forEach(input => {
+                const feedbackElement = input.nextElementSibling;
+                if (feedbackElement && feedbackElement.classList.contains('invalid-feedback')) {
+                    feedbackElement.style.display = 'block';
+                }
+            });
+        }
+        
+        // Inicializa animaciones en scroll
+        function initScrollAnimations() {
+            // Detectar elementos para animar al hacer scroll
+            const animatedElements = document.querySelectorAll('.feature-cards .card, .plan-card, .team-member, .value-item, .stat-item');
+            
+            // Función para verificar si un elemento está en el viewport
+            function checkIfInView() {
+                animatedElements.forEach(element => {
+                    const rect = element.getBoundingClientRect();
+                    const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+                    
+                    // Si el elemento está visible
+                    if (rect.top <= windowHeight * 0.85) {
+                        element.classList.add('animated');
+                    }
+                });
+            }
+            
+            // Ejecutar al cargar la página
+            checkIfInView();
+            
+            // Ejecutar al hacer scroll
+            window.addEventListener('scroll', checkIfInView);
+        }
+        
+        // Inicializa navegación suave
+        function initSmoothScrolling() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    
+                    // Ignorar si es el enlace del menú desplegable o # vacío
+                    if (targetId === '#' || this.id === 'servicesLink') {
+                        return;
+                    }
+                    
+                    e.preventDefault();
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        // Calcular la posición para el scroll
+                        const headerOffset = 80; // Ajustar según la altura del header
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Actualizar URL sin recargar la página
+                        history.pushState(null, null, targetId);
+                    }
+                });
+            });
+        }
     </script>
 </body>
 </html>
